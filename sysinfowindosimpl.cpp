@@ -1,13 +1,13 @@
 #include "sysinfowindosimpl.h"
 #include <Windows.h>
 
-SysInfoWindosImpl::SysInfoWindosImpl() : SysInfo (), mCpuLoadLastValues() {}
+SysInfoWindowsImpl::SysInfoWindowsImpl() : SysInfo (), mCpuLoadLastValues() {}
 
-void SysInfoWindosImpl::init(){
+void SysInfoWindowsImpl::init(){
     mCpuLoadLastValues = cpuRawData();
 }
 
-double SysInfoWindosImpl::memoryUsed(){
+double SysInfoWindowsImpl::memoryUsed(){
     MEMORYSTATUSEX memoryStatus;
     memoryStatus.dwLength = sizeof (MEMORYSTATUSEX);
     GlobalMemoryStatusEx(&memoryStatus);
@@ -15,7 +15,7 @@ double SysInfoWindosImpl::memoryUsed(){
     return static_cast<double>(memoryPhysicalUsed) / static_cast<double>(memoryStatus.ullTotalPhys) *100;
 }
 
-QVector<qulonglong> SysInfoWindosImpl::cpuRawData(){
+QVector<qulonglong> SysInfoWindowsImpl::cpuRawData(){
     FILETIME idleTime;
     FILETIME kernelTime;
     FILETIME userTime;
@@ -29,14 +29,14 @@ QVector<qulonglong> SysInfoWindosImpl::cpuRawData(){
     return rawData;
 }
 
-qulonglong SysInfoWindosImpl::convertFileTime(const FILETIME &filetime) const{
+qulonglong SysInfoWindowsImpl::convertFileTime(const FILETIME &filetime) const{
     ULARGE_INTEGER largeInteger;
     largeInteger.LowPart = filetime.dwLowDateTime;
     largeInteger.HighPart = filetime.dwHighDateTime;
     return largeInteger.QuadPart;
 }
 
-double SysInfoWindosImpl::cpuLoadAverage(){
+double SysInfoWindowsImpl::cpuLoadAverage(){
     QVector<qulonglong> firstSample = mCpuLoadLastValues;
     QVector<qulonglong> secondSample = cpuRawData();
     mCpuLoadLastValues = secondSample;

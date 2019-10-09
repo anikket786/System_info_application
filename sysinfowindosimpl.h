@@ -7,10 +7,10 @@
 
 typedef struct _FILETIME FILETIME;
 
-class SysInfoWindosImpl : public SysInfo
+class SysInfoWindowsImpl : public SysInfo
 {
 public:
-    SysInfoWindosImpl();
+    SysInfoWindowsImpl();
     void init() override;
     double cpuLoadAverage() override;
     double memoryUsed() override;
