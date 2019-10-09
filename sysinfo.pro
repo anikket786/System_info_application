@@ -28,12 +28,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         sysinfo.cpp \
-    sysinfomacimpl.cpp
+    sysinfomacimpl.cpp \
+    sysinfowidget.cpp
 
 HEADERS += \
         mainwindow.h \
         sysinfo.h \
-    sysinfomacimpl.h
+    sysinfomacimpl.h \
+    sysinfowidget.h
 
 
 windows {
