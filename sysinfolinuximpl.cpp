@@ -1,4 +1,4 @@
-#include "sysinfolinuximpl.h"
+#include "SysInfoLinuxImpl.h"
 
 #include <sys/types.h>
 #include <sys/sysinfo.h>
@@ -68,3 +68,4 @@ QVector<qulonglong> SysInfoLinuxImpl::cpuRawData()
 
     return rawData;
 }
+

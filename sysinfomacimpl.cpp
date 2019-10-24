@@ -1,4 +1,4 @@
-#include "sysinfomacimpl.h"
+#include "SysInfoMacImpl.h"
 
 #include <mach/vm_statistics.h>
 #include <mach/mach_types.h>

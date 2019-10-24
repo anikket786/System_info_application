@@ -1,55 +1,38 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-10-07T21:48:49
+# Project created by QtCreator 2016-03-24T16:25:01
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui charts
+CONFIG   += C++14
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = sysinfo
 TEMPLATE = app
 
-# The following define makes your compiler emit warnings if you use
-# any feature of Qt which has been marked as deprecated (the exact warnings
-# depend on your compiler). Please consult the documentation of the
-# deprecated API in order to know how to port your code away from it.
-DEFINES += QT_DEPRECATED_WARNINGS
+SOURCES += main.cpp \
+    MainWindow.cpp \
+    SysInfo.cpp \
+    CpuWidget.cpp \
+    MemoryWidget.cpp \
+    SysInfoWidget.cpp
 
-# You can also make your code fail to compile if you use deprecated APIs.
-# In order to do so, uncomment the following line.
-# You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
-
-CONFIG += c++14
-
-SOURCES += \
-    cpuwidget.cpp \
-        main.cpp \
-        mainwindow.cpp \
-    memorywidget.cpp \
-        sysinfo.cpp \
-    sysinfomacimpl.cpp \
-    sysinfowidget.cpp
-
-HEADERS += \
-    cpuwidget.h \
-        mainwindow.h \
-    memorywidget.h \
-        sysinfo.h \
-    sysinfomacimpl.h \
-    sysinfowidget.h
-
+HEADERS += MainWindow.h \
+    SysInfo.h \
+    CpuWidget.h \
+    MemoryWidget.h \
+    SysInfoWidget.h
 
 windows {
-    SOURCES += sysinfowindosimpl.cpp
-    HEADERS += sysinfowindosimpl.h
+    SOURCES += SysInfoWindowsImpl.cpp
+    HEADERS += SysInfoWindowsImpl.h
 }
 
 linux {
-    SOURCES += sysinfolinuximpl.cpp
-    HEADERS += sysinfolinuximpl.h
+    SOURCES += SysInfoLinuxImpl.cpp
+    HEADERS += SysInfoLinuxImpl.h
 }
 
 macx {
@@ -57,10 +40,4 @@ macx {
     HEADERS += SysInfoMacImpl.h
 }
 
-FORMS += \
-        mainwindow.ui
-
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+FORMS    += MainWindow.ui

@@ -1,4 +1,4 @@
-#include "cpuwidget.h"
+#include "CpuWidget.h"
 
 #include "SysInfo.h"
 

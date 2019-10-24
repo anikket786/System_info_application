@@ -1,4 +1,4 @@
-#include "sysinfowidget.h"
+#include "SysInfoWidget.h"
 
 #include <QVBoxLayout>
 

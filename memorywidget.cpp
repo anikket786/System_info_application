@@ -1,10 +1,10 @@
-#include "memorywidget.h"
+#include "MemoryWidget.h"
 
 #include <QtCharts/QAreaSeries>
 #include <QPen>
 #include <QLinearGradient>
 
-#include "sysinfo.h"
+#include "SysInfo.h"
 
 using namespace QtCharts;
 

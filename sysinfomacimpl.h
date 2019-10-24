@@ -1,7 +1,7 @@
 #ifndef SYSINFOMACIMPL_H
 #define SYSINFOMACIMPL_H
 
-#include "sysinfo.h"
+#include "SysInfo.h"
 
 #include <QtGlobal>
 #include <QVector>

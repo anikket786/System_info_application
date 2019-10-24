@@ -4,7 +4,7 @@
 #include <QtGlobal>
 #include <QVector>
 
-#include "sysinfo.h"
+#include "SysInfo.h"
 
 class SysInfoLinuxImpl : public SysInfo
 {

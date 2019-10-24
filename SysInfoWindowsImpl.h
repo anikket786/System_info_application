@@ -1,9 +1,10 @@
-#ifndef SYSINFOWINDOSIMPL_H
-#define SYSINFOWINDOSIMPL_H
+#ifndef SYSINFOWINDOWSIMPL_H
+#define SYSINFOWINDOWSIMPL_H
 
 #include <QtGlobal>
 #include <QVector>
-#include "sysinfo.h"
+
+#include "SysInfo.h"
 
 typedef struct _FILETIME FILETIME;
 
@@ -11,6 +12,7 @@ class SysInfoWindowsImpl : public SysInfo
 {
 public:
     SysInfoWindowsImpl();
+
     void init() override;
     double cpuLoadAverage() override;
     double memoryUsed() override;
@@ -18,9 +20,7 @@ public:
 private:
     QVector<qulonglong> cpuRawData();
     qulonglong convertFileTime(const FILETIME& filetime) const;
-
-private:
     QVector<qulonglong> mCpuLoadLastValues;
 };
 
-#endif // SYSINFOWINDOSIMPL_H
+#endif // SYSINFOWINDOWSIMPL_H

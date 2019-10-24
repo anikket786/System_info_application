@@ -15,9 +15,9 @@ public:
 protected:
     explicit SysInfo();
 
-public:
-    SysInfo(const SysInfo& rhs) = delete;
-    SysInfo& operator=(const SysInfo& rhs) = delete;
+private:
+    SysInfo(const SysInfo& rhs);
+    SysInfo& operator=(const SysInfo& rhs);
 };
 
 #endif // SYSINFO_H

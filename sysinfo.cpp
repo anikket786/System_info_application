@@ -1,17 +1,17 @@
-#include "sysinfo.h"
+#include "SysInfo.h"
+
 #include <QtGlobal>
 
 #ifdef Q_OS_WIN
-    #include <sysinfowindosimpl.h>
+    #include "SysInfoWindowsImpl.h"
 #elif defined(Q_OS_MAC)
-    #include <sysinfomacimpl.h>
+    #include "SysInfoMacImpl.h"
 #elif defined(Q_OS_LINUX)
-    #include <sysinfolinuximpl.h>
+    #include "SysInfoLinuxImpl.h"
 #endif
 
-SysInfo::SysInfo(){}
-
-SysInfo& SysInfo::instance(){
+SysInfo& SysInfo::instance()
+{
     #ifdef Q_OS_WIN
         static SysInfoWindowsImpl singleton;
     #elif defined(Q_OS_MAC)
@@ -19,7 +19,14 @@ SysInfo& SysInfo::instance(){
     #elif defined(Q_OS_LINUX)
         static SysInfoLinuxImpl singleton;
     #endif
+
     return singleton;
 }
 
-SysInfo::~SysInfo(){}
+SysInfo::SysInfo()
+{
+}
+
+SysInfo::~SysInfo()
+{
+}

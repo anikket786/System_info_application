@@ -3,7 +3,7 @@
 
 #include <QtCharts/QLineSeries>
 
-#include "sysinfowidget.h"
+#include "SysInfoWidget.h"
 
 class MemoryWidget : public SysInfoWidget
 {

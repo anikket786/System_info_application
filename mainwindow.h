@@ -3,8 +3,8 @@
 
 #include <QMainWindow>
 
-#include "cpuwidget.h"
-#include "memorywidget.h"
+#include "CpuWidget.h"
+#include "MemoryWidget.h"
 
 namespace Ui {
 class MainWindow;
